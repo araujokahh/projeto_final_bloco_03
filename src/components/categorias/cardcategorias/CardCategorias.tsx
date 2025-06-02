@@ -14,7 +14,6 @@ function CardCategorias({ categoria }: CardCategoriasProps) {
             </header>
             <p className='p-8 text-3xl bg-slate-200 h-full'>{categoria.nome}</p>
             
-            //***CONFIRMAR */
             <p className='p-8 text-3xl bg-slate-200 h-full'>{categoria.descricao}</p>
 
 

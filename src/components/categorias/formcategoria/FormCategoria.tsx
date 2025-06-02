@@ -9,8 +9,8 @@ function FormCategoria() {
     const navigate = useNavigate();
 
     const [categoria, setCategoria] = useState<Categoria>({} as Categoria)
-    
-    
+
+
     const [isLoading, setIsLoading] = useState<boolean>(false)
 
 
@@ -83,23 +83,10 @@ function FormCategoria() {
                 {id === undefined ? 'Cadastrar Categoria' : 'Editar Categoria'}
             </h1>
 
-            {/* <form className="w-1/2 flex flex-col gap-4" onSubmit={gerarNovaCategoria}>
-                <div className="flex flex-col gap-2">
-                    <label htmlFor="descricao">Descrição da Categoria</label>
-                    <input
-                        type="text"
-                        placeholder="Descreva aqui a categoria"
-                        name='descricao'
-                        className="border-2 border-slate-700 rounded p-2"
-                        value={categoria.descricao}
-                        onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-                    />
-                </div> */}
 
             <form className="w-1/2 flex flex-col gap-4" onSubmit={gerarNovaCategoria}>
 
                 <div className="flex flex-col gap-2">
-                    <label htmlFor="nome">Nome da Categoria</label>
                     <input
                         type="text"
                         placeholder="Digite o nome da categoria"
@@ -108,10 +95,6 @@ function FormCategoria() {
                         value={categoria.nome}
                         onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
                     />
-                </div>
-
-                <div className="flex flex-col gap-2">
-                    <label htmlFor="descricao">Descrição da Categoria</label>
                     <input
                         type="text"
                         placeholder="Descreva aqui a categoria"
@@ -120,6 +103,7 @@ function FormCategoria() {
                         value={categoria.descricao}
                         onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
                     />
+
                 </div>
 
                 <button

@@ -16,9 +16,7 @@ function ListaCategorias() {
 
     async function buscarCategorias() {
         try {
-            await buscar('/categoria', setCategorias, {
-                headers: { Authorization: "" }
-            })
+            await buscar('/categoria', setCategorias)
         } catch (error: any) {
             if (error.toString().includes('403')) {
             }
