@@ -3,6 +3,7 @@ import type Categoria from "../../../models/Categoria";
 import { useEffect, useState, type ChangeEvent } from "react";
 import { atualizar, buscar, cadastrar } from "../../../services/Service";
 import { RotatingLines } from "react-loader-spinner";
+import { ToastAlerta } from "../../../utils/ToastAlerta";
 
 function FormCategoria() {
 
@@ -52,22 +53,22 @@ function FormCategoria() {
         if (id !== undefined) {
             try {
                 await atualizar(`/categoria`, categoria, setCategoria)
-                alert('A categoria foi atualizada com sucesso!')
+                ToastAlerta('A categoria foi atualizada com sucesso!', 'sucesso')
             } catch (error: any) {
                 if (error.toString().includes('403')) {
                 } else {
-                    alert('Erro ao atualizar a categoria.')
+                    ToastAlerta('Erro ao atualizar a categoria.', 'erro')
                 }
 
             }
         } else {
             try {
                 await cadastrar(`/categoria`, categoria, setCategoria)
-                alert('A categoria foi cadastrada com sucesso!')
+                ToastAlerta('A categoria foi cadastrada com sucesso!', 'sucesso')
             } catch (error: any) {
                 if (error.toString().includes('403')) {
                 } else {
-                    alert('Erro ao cadastrar categoria.')
+                    ToastAlerta('Erro ao cadastrar categoria.', 'erro')
                 }
 
             }
