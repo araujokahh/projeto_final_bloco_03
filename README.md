@@ -1,54 +1,67 @@
-# React + TypeScript + Vite
+# FarmaJava - Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Frontend da aplicação **FarmaJava**, um sistema simples para cadastro, listagem, edição e exclusão de categorias de medicamentos. 
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🧪 Tecnologias Utilizadas
 
-## Expanding the ESLint configuration
+- [React](https://reactjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [TailwindCSS](https://tailwindcss.com/)
+- [Axios](https://axios-http.com/)
+- [React Router DOM](https://reactrouter.com/en/main)
+- [React Loader Spinner](https://www.npmjs.com/package/react-loader-spinner)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## ⚙️ Funcionalidades
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+- Listar todas as categorias cadastradas
+- Cadastrar nova categoria
+- Editar uma categoria existente
+- Deletar categoria com confirmação
+- Feedback visual de carregamento
+- Integração com backend via Axios
+
+## ▶️ Como rodar o projeto
+
+1. Clone o repositório:  
+   `git clone https://github.com/araujokahh/projeto_final_bloco_03`  
+   `cd projeto_final_bloco_03`
+
+2. Instale as dependências:  
+   `npm install`
+
+3. Inicie o projeto:  
+   `npm run dev`
+
+4. O projeto será iniciado em:  
+   `http://localhost:5173` (ou porta configurada no seu Vite/React)
+
+> 💡 Certifique-se de que o backend esteja rodando em `http://localhost:8080`.
+> ***OBS:*** O repositório do backend está disponível em: https://github.com/araujokahh/projeto_final_bloco_02
+
+## 📁 Estrutura de Pastas (Simplificada)
+
+```
+src/
+│
+├── components/
+│   └── CardCategorias.tsx
+│
+├── pages/
+│   ├── Home.tsx
+│   ├── ListaCategorias.tsx
+│   ├── FormCategoria.tsx
+│   └── DeletarCategoria.tsx
+│
+├── services/
+│   └── Service.ts
+│
+├── types/
+│   └── Categoria.ts
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 📌 Observações
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Este projeto é voltado para fins educacionais e representa uma solução inicial que pode ser expandida com outras features no futuro.
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+---
